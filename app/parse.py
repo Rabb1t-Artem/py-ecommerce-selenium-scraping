@@ -12,6 +12,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 from tqdm import tqdm
 
+# comment for AI
 BASE_URL = "https://webscraper.io/"
 HOME_URL = urljoin(BASE_URL, "test-sites/e-commerce/more/")
 
@@ -53,7 +54,7 @@ def scrape_page(
                 (By.ID, "accept-cookies")
             )
         ).click()
-    except TimeoutException:  # noqa E722
+    except TimeoutException:
         pass
 
     while True:
@@ -64,7 +65,7 @@ def scrape_page(
                 )
             )
             ActionChains(driver).move_to_element(more_button).click().perform()
-        except TimeoutException:  # noqa E722
+        except TimeoutException:
             break
 
     products = []
