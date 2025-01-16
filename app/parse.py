@@ -71,7 +71,7 @@ def scrape_page(
     products = []
     product_elements = driver.find_elements(By.CLASS_NAME, "thumbnail")
     for product in tqdm(
-        product_elements, desc=f"Parsing poducts from {product_page} page"
+        product_elements, desc=f"Parsing products from {product_page} page"
     ):
         products.append(parse_single_product(product))
 
